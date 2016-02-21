@@ -63,5 +63,53 @@ public class CategoryClick extends AppCompatActivity {
             }
         });
 
+        final Button Italian = (Button) findViewById(R.id.Italian);
+        Italian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Perform action on click
+            }
+        });
+
+        final Button FastFood = (Button) findViewById(R.id.FastFood);
+        FastFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Perform action on click
+            }
+        });
+
+        final Button Indian = (Button) findViewById(R.id.Indian);
+        Indian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Perform action on click
+            }
+        });
+
+        final Button Mediterranean = (Button) findViewById(R.id.Mediterranean);
+        Mediterranean.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Perform action on click
+            }
+        });
+
+        final Button French = (Button) findViewById(R.id.French);
+        French.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Perform action on click
+            }
+        });
+
+        final Button Mexican = (Button) findViewById(R.id.Mexican);
+        Mexican.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Perform action on click
+            }
+        });
+
     }
 }
