@@ -14,5 +14,7 @@
     <string name="Mediterranean">Mediterranean</string>
     <string name="French">French</string>
     <string name="Mexican">Mexican</string>
+    <string name="hello">ImageView from URL</string>
+    <string name="credits">Designed by Liew Chee Town, Wee Miao Zi and Yaw Meng Wai. Copyright. Hackillinois 2016</string>
 
 </resources>

@@ -16,7 +16,7 @@
             android:gravity="center_horizontal">
             <Button
                 android:text="@string/American"
-                android:background="#dcdcdc"
+                android:background="@drawable/button_american"
                 android:textSize="35sp"
                 android:textColor="#000000"
                 android:textStyle="bold"
@@ -30,7 +30,7 @@
             android:gravity="center_horizontal">
             <Button
                 android:text="@string/Chinese"
-                android:background="#dcdcdc"
+                android:background="@drawable/button_chinese"
                 android:textSize="35sp"
                 android:textColor="#000000"
                 android:textStyle="bold"
@@ -59,7 +59,7 @@
             <Button
                 android:text="@string/Japanese"
                 android:textSize="35sp"
-                android:background="#b0b0b0"
+                android:background="@drawable/button_japanese"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 android:padding="20dp"/>
@@ -73,7 +73,7 @@
             <Button
                 android:text="@string/Korean"
                 android:textSize="35sp"
-                android:background="#a09f9f"
+                android:background="@drawable/button_korean"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 android:padding="20dp"/>
@@ -114,20 +114,6 @@
             android:layout_width="wrap_content"
             android:gravity="center_horizontal">
             <Button
-                android:text="@string/Barbeque"
-                android:background="#d3d3d3"
-                android:textSize="35sp"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:padding="20dp"/>
-        </TableRow>
-
-        <!-- Row 9 -->
-        <TableRow
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:gravity="center_horizontal">
-            <Button
                 android:text="@string/Fast_Food"
                 android:textSize="35sp"
                 android:background="#b0b0b0"
@@ -136,7 +122,7 @@
                 android:padding="20dp"/>
         </TableRow>
 
-        <!-- Row 10 -->
+        <!-- Row 9 -->
         <TableRow
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
@@ -150,7 +136,7 @@
                 android:padding="20dp"/>
         </TableRow>
 
-        <!-- Row 11 -->
+        <!-- Row 10-->
         <TableRow
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
@@ -164,7 +150,7 @@
                 android:textColor="#000"/>
         </TableRow>
 
-        <!-- Row 12 -->
+        <!-- Row 11 -->
         <TableRow
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
@@ -178,7 +164,7 @@
                 android:padding="20dp"/>
         </TableRow>
 
-        <!-- Row 13 -->
+        <!-- Row 12 -->
         <TableRow
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
