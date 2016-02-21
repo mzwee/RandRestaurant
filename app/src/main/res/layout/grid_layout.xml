@@ -139,7 +139,7 @@
                 android:id="@+id/Indian"
                 android:text="@string/Indian"
                 android:textSize="35sp"
-                android:background="#a09f9f"
+                android:background="@drawable/button_indian"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 android:padding="20dp"/>

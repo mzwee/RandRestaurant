@@ -16,5 +16,12 @@
     <string name="Mexican">Mexican</string>
     <string name="hello">ImageView from URL</string>
     <string name="credits">Designed by Liew Chee Town, Wee Miao Zi and Yaw Meng Wai. Copyright. Hackillinois 2016</string>
+    <string name="Address">Address:</string>
+    <string name="Name">Name:</string>
+    <string name="Phone">Contact Number:</string>
+    <string name="Rating">Rating:</string>
+    <string name="ReviewCount">No. of reviews:</string>
+    <string name="Yelp">Information provided by Yelp</string>
+
 
 </resources>
