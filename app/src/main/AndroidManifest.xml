@@ -3,6 +3,8 @@
     package="com.example.mzwee.randrestaurant" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -32,6 +34,16 @@
         </activity>
 
         <activity
+            android:name=".YelpQuery"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".CardViewActivity"
             android:label="@string/app_name" >
             <intent-filter >
@@ -45,7 +57,7 @@
             android:name=".GridView"
             android:label="@string/app_name" >
             <intent-filter >
-                <!--<action android:name="android.intent.action.MAIN" />-->
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -55,7 +67,7 @@
             android:name=".ImageViewFromURLActivity"
             android:label="RandRestaurant">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <!--<action android:name="android.intent.action.MAIN"/>-->
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
 

@@ -45,7 +45,7 @@ public class UserAuth extends AppCompatActivity{
                         // if our login is true we should go to the main page
                         Toast.makeText(getApplicationContext(), "Log in approved!",
                                 Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(UserAuth.this, MainActivity.class);
+                        Intent intent = new Intent(UserAuth.this, GridView.class);
                         startActivity(intent);
 
                         System.out.println("User ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
