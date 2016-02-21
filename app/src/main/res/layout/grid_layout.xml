@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="1"
+        android:background="#ffffff">
+
+        <!-- Row 1 -->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/American"
+                android:text="@string/American"
+                android:background="@drawable/button_american"
+                android:textSize="35sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:padding="20dp"/>
+        </TableRow>
+
+        <!-- Row 2 -->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/Chinese"
+                android:text="@string/Chinese"
+                android:background="@drawable/button_chinese"
+                android:textSize="35sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:padding="20dp"/>
+        </TableRow>
+
+        <!-- Row 3 -->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/SouthEastAsia"
+                android:text="@string/South_East_Asian"
+                android:background="@drawable/button_sea"
+                android:textSize="30sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:padding="20dp"/>
+        </TableRow>
+
+        <!-- Row 4 -->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/Japanese"
+                android:text="@string/Japanese"
+                android:textSize="35sp"
+                android:background="@drawable/button_japanese"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:padding="20dp"/>
+        </TableRow>
+
+        <!-- Row 5 -->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/Korean"
+                android:text="@string/Korean"
+                android:textSize="35sp"
+                android:background="@drawable/button_korean"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:padding="20dp"/>
+        </TableRow>
+
+        <!-- Row 6 -->
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/Arabian"
+                android:text="@string/Arabian"
+                android:layout_width="wrap_content"
+                android:textSize="35sp"
+                android:padding="20dp"
+                android:background="@drawable/button_arabian"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+        </TableRow>
+
+        <!-- Row 7 -->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/Italian"
+                android:text="@string/Italian"
+                android:textSize="35sp"
+                android:background="@drawable/button_italian"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:padding="20dp"/>
+        </TableRow>
+
+        <!-- Row 8 -->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/FastFood"
+                android:text="@string/Fast_Food"
+                android:textSize="35sp"
+                android:background="@drawable/button_fastfood"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:padding="20dp"/>
+        </TableRow>
+
+        <!-- Row 9 -->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/Indian"
+                android:text="@string/Indian"
+                android:textSize="35sp"
+                android:background="@drawable/button_indian"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:padding="20dp"/>
+        </TableRow>
+
+        <!-- Row 10-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/Mediterranean"
+                android:text="@string/Mediterranean"
+                android:textSize="35sp"
+                android:padding="20dp"
+                android:background="@drawable/button_mediterranean"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+        </TableRow>
+
+        <!-- Row 11 -->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/French"
+                android:text="@string/French"
+                android:textSize="35sp"
+                android:background="@drawable/button_french"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:padding="20dp"/>
+        </TableRow>
+
+        <!-- Row 12 -->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/Mexican"
+                android:text="@string/Mexican"
+                android:textSize="35sp"
+                android:background="@drawable/button_mexican"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:padding="20dp"/>
+        </TableRow>
+
+    </TableLayout>
+</ScrollView>

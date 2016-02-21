@@ -1,4 +1,27 @@
 <resources>
     <string name="app_name">RandRestaurant</string>
     <string name="action_settings">Settings</string>
+    <string name="American">American</string>
+    <string name="Chinese">Chinese</string>
+    <string name="Japanese">Japanese</string>
+    <string name="Korean">Korean</string>
+    <string name="Italian">Italian</string>
+    <string name="Indian">Indian</string>
+    <string name="South_East_Asian">South East Asian</string>
+    <string name="Arabian">Arabian/Middle Eastern</string>
+    <string name="Barbeque">Barbeque</string>
+    <string name="Fast_Food">Fast Food</string>
+    <string name="Mediterranean">Mediterranean</string>
+    <string name="French">French</string>
+    <string name="Mexican">Mexican</string>
+    <string name="hello">ImageView from URL</string>
+    <string name="credits">Designed by Liew Chee Town, Wee Miao Zi and Yaw Meng Wai. Copyright. Hackillinois 2016</string>
+    <string name="Address">Address:</string>
+    <string name="Name">Name:</string>
+    <string name="Phone">Contact Number:</string>
+    <string name="Rating">Rating:</string>
+    <string name="ReviewCount">No. of reviews:</string>
+    <string name="Yelp">Information provided by Yelp</string>
+
+
 </resources>
