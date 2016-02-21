@@ -10,6 +10,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 /**/
 
 //import com.google.android.gms.appindexing.Action;
@@ -56,7 +57,7 @@ public class YelpQuery extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.yelp_query);
+        setContentView(R.layout.business_list);
 
 //        buildGoogleApiClient();
 
@@ -72,8 +73,10 @@ public class YelpQuery extends AppCompatActivity {
         // params
         params.put("lang", "en");
         params.put("cc", "US");
+        params.put("term", "restaurants");
+        params.put("category_filter", "newamerican");
 
-        final List<String> businessNames = new ArrayList<String>();
+//        final List<String> businessNames = new ArrayList<String>();
 
         CoordinateOptions coordinate = CoordinateOptions.builder().latitude(40.1).longitude(-88.23).build();
 //        if(mLastLocation != null) {
@@ -87,12 +90,19 @@ public class YelpQuery extends AppCompatActivity {
             Random r = new Random();
             int value = r.nextInt(20);
             Business selected = searchResponse.businesses().get(value);
-            businessNames.add(selected.name());
-            businessNames.add(selected.phone());
-            businessNames.add(Double.toString(selected.reviewCount()));
-            businessNames.add(Double.toString(selected.rating()));
-            businessNames.add(selected.location().displayAddress().toString());
-            businessNames.add(selected.imageUrl());
+            TextView t = (TextView)findViewById(R.id.name);
+            System.out.println("Testing");
+            t.setText("Name: " + selected.name());
+            t = (TextView)findViewById(R.id.contact);
+            t.setText("Contact Number: " + selected.phone());
+            t = (TextView)findViewById(R.id.review);
+            t.setText("# Reviews: " + selected.reviewCount());
+//            businessNames.add(selected.name());
+//            businessNames.add(selected.phone());
+//            businessNames.add(Double.toString(selected.reviewCount()));
+//            businessNames.add(Double.toString(selected.rating()));
+//            businessNames.add(selected.location().displayAddress().toString());
+//            businessNames.add(selected.imageUrl());
 
 //            ArrayList<Business> businesses = searchResponse.businesses();
 //            for (Business b : businesses) {
@@ -103,8 +113,8 @@ public class YelpQuery extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, businessNames);
-        listView.setAdapter(adapter);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, businessNames);
+//        listView.setAdapter(adapter);
 
 
     }
