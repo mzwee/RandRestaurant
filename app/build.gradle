@@ -21,7 +21,13 @@ android {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/LICENSE-FIREBASE.txt'
         exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META'
     }
+}
+
+repositories {
+    mavenCentral()
 }
 
 dependencies {
@@ -30,4 +36,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.firebase:firebase-client-android:2.5.1+'
+    compile 'com.yelp.clientlib:yelp-android:1.0.0'
+
 }
