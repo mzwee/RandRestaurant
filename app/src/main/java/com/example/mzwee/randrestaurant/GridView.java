@@ -1,31 +1,60 @@
 package com.example.mzwee.randrestaurant;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 
 import java.util.ArrayList;
 
 /**
  * Created by User on 20-Feb-16.
  */
-public class GridView extends AppCompatActivity {
+public class GridView extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+
+    private Context context;
+    private Activity activity;
+    private static final int PERMISSION_REQUEST_CODE = 1;
+    protected GoogleApiClient mGoogleApiClient;
+    protected Location mLastLocation;
 
     @Override
-    protected  void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grid_layout);
+
+        context = getApplicationContext();
+        activity = this;
+
+        // Create an instance of GoogleAPIClient
+        if(mGoogleApiClient == null) {
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
+        }
 
         final Button American = (Button) findViewById(R.id.American);
         American.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Perform action on click
-                Intent intent = new Intent(GridView.this, YelpQuery.class);
-                intent.putExtra("category", "newamerican");
-                startActivity(intent);
+                query("newamerican");
             }
         });
 
@@ -34,9 +63,7 @@ public class GridView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Perform action on click
-                Intent intent = new Intent(GridView.this, YelpQuery.class);
-                intent.putExtra("category", "chinese");
-                startActivity(intent);
+                query("chinese");
             }
         });
 
@@ -45,9 +72,7 @@ public class GridView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Perform action on click
-                Intent intent = new Intent(GridView.this, YelpQuery.class);
-                intent.putExtra("category", "malaysian");
-                startActivity(intent);
+                query("malaysian");
             }
         });
 
@@ -56,9 +81,7 @@ public class GridView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Perform action on click
-                Intent intent = new Intent(GridView.this, YelpQuery.class);
-                intent.putExtra("category", "japanese");
-                startActivity(intent);
+                query("japanese");
             }
         });
 
@@ -67,9 +90,7 @@ public class GridView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Perform action on click
-                Intent intent = new Intent(GridView.this, YelpQuery.class);
-                intent.putExtra("category", "korean");
-                startActivity(intent);
+                query("korean");
             }
         });
 
@@ -78,9 +99,7 @@ public class GridView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Perform action on click
-                Intent intent = new Intent(GridView.this, YelpQuery.class);
-                intent.putExtra("category", "arabian");
-                startActivity(intent);
+                query("arabian");
             }
         });
 
@@ -89,9 +108,7 @@ public class GridView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Perform action on click
-                Intent intent = new Intent(GridView.this, YelpQuery.class);
-                intent.putExtra("category", "italian");
-                startActivity(intent);
+                query("italian");
             }
         });
 
@@ -100,9 +117,7 @@ public class GridView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Perform action on click
-                Intent intent = new Intent(GridView.this, YelpQuery.class);
-                intent.putExtra("category", "hotdogs");
-                startActivity(intent);
+                query("hotdogs");
             }
         });
 
@@ -111,9 +126,7 @@ public class GridView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Perform action on click
-                Intent intent = new Intent(GridView.this, YelpQuery.class);
-                intent.putExtra("category", "indpak");
-                startActivity(intent);
+                query("indpak");
             }
         });
 
@@ -122,9 +135,7 @@ public class GridView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Perform action on click
-                Intent intent = new Intent(GridView.this, YelpQuery.class);
-                intent.putExtra("category", "mediterranean");
-                startActivity(intent);
+                query("mediterranean");
             }
         });
 
@@ -133,9 +144,7 @@ public class GridView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Perform action on click
-                Intent intent = new Intent(GridView.this, YelpQuery.class);
-                intent.putExtra("category", "french");
-                startActivity(intent);
+                query("french");
             }
         });
 
@@ -144,11 +153,71 @@ public class GridView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Perform action on click
-                Intent intent = new Intent(GridView.this, YelpQuery.class);
-                intent.putExtra("category", "mexican");
-                startActivity(intent);
+                query("mexican");
             }
         });
     }
 
+    protected void onStart() {
+        mGoogleApiClient.connect();
+        super.onStart();
+    }
+
+    protected void onStop() {
+        mGoogleApiClient.disconnect();
+        super.onStop();
+    }
+
+    @Override
+    public void onConnected(Bundle bundle) {
+        if(!checkPermission()) {
+            requestPermission();
+        }
+        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+
+    }
+
+    private boolean checkPermission() {
+        int result = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION);
+        if(result == PackageManager.PERMISSION_GRANTED) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private void requestPermission() {
+        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST_CODE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSION_REQUEST_CODE:
+                if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(this, "Permission granted.", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(this, "Permission denied.", Toast.LENGTH_LONG).show();
+                }
+                break;
+        }
+    }
+
+    private void query(String category) {
+        if(mLastLocation != null) {
+            Intent intent = new Intent(GridView.this, YelpQuery.class);
+            intent.putExtra("category", category);
+            intent.putExtra("location", mLastLocation);
+            startActivity(intent);
+        }
+    }
 }
